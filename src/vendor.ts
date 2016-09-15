@@ -9,3 +9,5 @@ import '@angular/http';
 import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/router';
+import 'lodash';
+import '@angular/router';
