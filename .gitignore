@@ -34,3 +34,4 @@ vendor.js
 .idea/
 *.ipr
 *.iws
+/dist
