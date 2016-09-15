@@ -1,12 +1,14 @@
-var webpack = require("webpack");
+"use strict";
+const webpack = require("webpack"),
+      HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     "vendor": "./src/vendor",
     "app": "./src/boot"
   },
   output: {
-    path: __dirname,
-    filename: "./dist/[name].bundle.js"
+    path: __dirname + '/dist',
+    filename: "js/[name].bundle.js"
   },
   resolve: {
     extensions: ['', '.js', '.ts']
@@ -25,6 +27,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./dist/vendor.bundle.js")
+    new HtmlWebpackPlugin({
+      title: 'Angular 2 test app',
+      template: 'src/template-index.ejs', // Load a custom template
+      inject: 'body'
+    }),
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"js/vendor.bundle.js")
   ]
 };
