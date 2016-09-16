@@ -9,13 +9,9 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "files": [
-    "src/boot.ts",
-    "src/vendor.ts"
-  ],
   "exclude": [
     "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
+    "typings",
+    "build"
   ]
 }

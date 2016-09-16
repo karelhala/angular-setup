@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 
 @Component({
   selector: 'my-app',
-  template: require('./app.component.html')
+  template: 'sdfsdf'
 })
 export class AppComponent {
   constructor() {

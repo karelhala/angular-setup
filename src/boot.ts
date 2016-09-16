@@ -1,7 +1,5 @@
-import * as angular from 'angular';
-import {upgradeAdapter} from './upgrade_adapter';
-import {AppComponent} from './components/app.component';
-
-angular.module('testModule', ['ngMaterial'])
-  .directive('myApp', <angular.IDirectiveFactory>upgradeAdapter.downgradeNg2Component(AppComponent));
-upgradeAdapter.bootstrap(document.body, ['testModule'], {strictDi: true});
+///<reference path="tsd.d.ts"/>
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);

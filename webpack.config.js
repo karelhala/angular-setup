@@ -1,6 +1,7 @@
 "use strict";
 const webpack = require("webpack"),
-      HtmlWebpackPlugin = require("html-webpack-plugin");
+      HtmlWebpackPlugin = require("html-webpack-plugin"),
+      nodeExternals = require('webpack-node-externals');;
 module.exports = {
   entry: {
     "vendor": "./src/vendor",
@@ -21,7 +22,7 @@ module.exports = {
     loaders: [
       {
         test: /\.ts/,
-        loaders: ['ts-loader',],
+        loaders: ['ts-loader'],
         exclude: /node_modules/
       },
       {test:/\.html$/, loader:'html' }
