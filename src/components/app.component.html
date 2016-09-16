@@ -1,3 +1,83 @@
-<div>
-  sdfsd
-</div>
+  <md-sidenav-layout class="sidenav-layout" fullscreen>
+    <md-sidenav #start [opened]="true" mode="side" class="sidenav-left" layout="column">
+      <md-toolbar md-theme="custom" class="md-hue-1 md-whiteframe-z2">
+        <button md-button class="md-toolbar-tools md-warn">
+          <h1>AMD</h1>
+        </button>
+      </md-toolbar>
+      <button md-button layout-align="center center"
+              flex class="capitalize md-warn">
+        <div hide-sm hide-md class="md-tile-content">
+          <i class="material-icons md-36">dashboard</i>
+        </div>
+        <div class="md-tile-content">
+          Dashboard
+        </div>
+      </button>
+      <md-divider></md-divider>
+      <button md-button layout-align="center center"
+              flex class="capitalize">
+        <div hide-sm hide-md class="md-tile-content">
+          <i class="material-icons md-36">person</i>
+        </div>
+        <div class="md-tile-content">
+          Profile
+        </div>
+      </button>
+      <button md-button layout-align="center center"
+              flex class="capitalize">
+        <div hide-sm hide-md class="md-tile-content">
+          <i class="material-icons md-36">view_module</i>
+        </div>
+        <div class="md-tile-content">
+          Table
+        </div>
+      </button>
+      <md-divider></md-divider>
+      <button md-button layout-align="center center"
+              class="capitalize">
+        <div class="md-tile-content">
+          Actions
+        </div>
+      </button>
+      <md-divider></md-divider>
+    </md-sidenav>
+
+    <md-sidenav #right align="end" layout-padding>
+      <h2>Right Sidenav.</h2>
+      <button md-raised-button class="md-raised md-primary" (click)="right.close()">Close</button>
+    </md-sidenav>
+
+    <div class="sidenav-content" flex layout="column">
+      <md-toolbar class="main-toolbar">
+        <section layout-align="start center" class="start-center" layout-fill flex>
+          <button md-button hide-gt-sm (click)="start.toggle()" aria-label="Menu">
+            <i class="material-icons">menu</i>
+          </button>
+        </section>
+        <section layout-align="end center">
+          <button md-button class="toolbar-button" aria-label="Search">
+            <i class="material-icons">search</i>
+          </button>
+          <button md-button class="toolbar-button" aria-label="Notifications">
+            <i class="material-icons">notifications</i>
+            <span class="notifications-label">7</span>
+          </button>
+          <button md-button class="toolbar-button" aria-label="Settings" (click)="right.toggle()">
+            <i class="material-icons">menu</i>
+          </button>
+        </section>
+      </md-toolbar>
+      <div class="content-partial">
+        <h1>My Content</h1>
+
+        <div>
+          <header>Sidenav</header>
+        </div>
+
+        <button md-button>HELLO</button>
+        <button md-raised-button class="md-primary">HELLO</button>
+        <button md-fab class="md-accent">HI</button>
+      </div>
+    </div>
+  </md-sidenav-layout>

@@ -1,0 +1,26 @@
+$md-font-url: '~ng2-material/font/';
+@import "~ng2-material/font/font.scss";
+@import "~ng2-material/ng2-material.css";
+
+.sidenav-layout {
+  height: 100vh;
+
+  .sidenav-content {
+    .content-partial {
+      padding: 10px;
+      height: calc(100vh - 84px);
+      overflow-y : auto;
+    }
+  }
+
+  .main-toolbar {
+    .start-center {
+      padding-top: 13px;
+    }
+    section button {
+      min-height: 0;
+      min-width: 0;
+      line-height: 0;
+    }
+  }
+}

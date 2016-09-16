@@ -12,5 +12,15 @@ import '@angular/platform-browser-dynamic';
 import '@angular/router';
 
 import '@angular2-material/core';
+import '@angular2-material/checkbox';
+import '@angular2-material/sidenav';
+import '@angular2-material/progress-bar';
+import '@angular2-material/radio';
+import '@angular2-material/slide-toggle';
+import '@angular2-material/tabs';
+import '@angular2-material/list';
+import '@angular2-material/toolbar';
+
+import 'ng2-material';
 
 import 'lodash';

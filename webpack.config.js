@@ -1,7 +1,6 @@
 "use strict";
 const webpack = require("webpack"),
-      HtmlWebpackPlugin = require("html-webpack-plugin"),
-      nodeExternals = require('webpack-node-externals');;
+      HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     "vendor": "./src/vendor",
@@ -25,7 +24,13 @@ module.exports = {
         loaders: ['ts-loader'],
         exclude: /node_modules/
       },
-      {test:/\.html$/, loader:'html' }
+      {test:/\.html$/, loader:'html' },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      },
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ]
   },
   plugins: [
