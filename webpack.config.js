@@ -34,6 +34,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      __dirname
+    ),
     new HtmlWebpackPlugin({
       title: 'Angular 2 test app',
       template: 'src/template-index.ejs', // Load a custom template
@@ -44,6 +48,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     historyApiFallback: true,
+    publicPath: '/',
+    inline: true,
     port: 7000
   }
 };

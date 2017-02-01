@@ -2,14 +2,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="/">
+    <base href="<%= htmlWebpackPlugin.options.publicPath %>">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <!-- vendor javascripts -->
-
-    <!-- vendor javascripts -->
 </head>
 <body>
 <my-app>Loading...</my-app>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js" integrity="sha256-PDno41dJ0mluJo7N9g7Yvud2DFit+B4HnFtnw6gdFog=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.6.26/zone.min.js" integrity="sha256-1yXQFho5+I1i6iiV0yjpbZJAAzGXwohnYedTf21DgY4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.8/Reflect.min.js" integrity="sha256-rKcebKVvRtSWiAw7TSQXCo6n4ETBl/kxdZXqeY04OvY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.41/system.src.js" integrity="sha256-66/PZVXLikewAmZD3L6BXE6Zk97p4WGjeyZugpT/Ah4=" crossorigin="anonymous"></script>
 </body>
 </html>
