@@ -1,24 +1,29 @@
 $md-font-url: '~ng2-material/font/';
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+html, body, material-app, md-sidenav-container, .my-content, .app-nav, .app-content, .flex-container{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
 
-.sidenav-layout {
-  height: 100vh;
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
 
-  .sidenav-content {
-    .content-partial {
-      padding: 10px;
-      height: calc(100vh - 84px);
-      overflow-y : auto;
-    }
-  }
+md-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
 
-  .main-toolbar {
-    .start-center {
-      padding-top: 13px;
-    }
-    section button {
-      min-height: 0;
-      min-width: 0;
-      line-height: 0;
-    }
-  }
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
 }

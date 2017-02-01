@@ -11,3 +11,4 @@ import '@angular/router';
 import '@angular/material';
 import 'hammerjs';
 import 'lodash';
+import '@angular/flex-layout';
