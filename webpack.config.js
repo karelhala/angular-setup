@@ -9,8 +9,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: "js/[name].bundle.js",
-    publicPath: '/'
+    filename: "js/[name].bundle.js"
   },
   resolve: {
     extensions: ['.js', '.ts']
