@@ -1,4 +1,3 @@
-///<reference path="tsd.d.ts"/>
 import 'reflect-metadata';
 import 'rxjs';
 import 'zone.js/dist/zone';
