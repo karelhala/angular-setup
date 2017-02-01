@@ -1,5 +1,6 @@
 "use strict";
 const webpack = require("webpack"),
+      path = require("path"),
       HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
@@ -8,26 +9,25 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: "js/[name].bundle.js"
+    filename: "js/[name].bundle.js",
+    publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.js', '.ts']
+    extensions: ['.js', '.ts']
   },
   devtool: 'source-map',
   module: {
-    preLoaders: [
-      {test: /\.ts$/, loader: 'tslint', exclude: /(node_modules|libs)/}
-    ],
-    loaders: [
+    rules: [
+      {enforce: 'pre', test: /\.ts?$/, loader: 'tslint-loader', exclude: /(node_modules|libs)/},
       {
         test: /\.ts/,
-        loaders: ['ts-loader'],
+        loader: 'ts-loader',
         exclude: /node_modules/
       },
-      {test:/\.html$/, loader:'html' },
+      {test:/\.html$/, loader:'html-loader' },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
@@ -39,6 +39,11 @@ module.exports = {
       template: 'src/template-index.ejs', // Load a custom template
       inject: 'body'
     }),
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"js/vendor.bundle.js")
-  ]
+    new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "js/vendor.bundle.js"})
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
+    port: 7000
+  }
 };
